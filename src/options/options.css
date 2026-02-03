@@ -1,0 +1,409 @@
+/* Gmail Rechnungs-Manager Options Page Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #1e293b;
+  background-color: #f1f5f9;
+  min-height: 100vh;
+}
+
+.options-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+/* Header */
+.options-header {
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+  color: white;
+  padding: 32px 24px;
+  margin-bottom: 24px;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-logo {
+  width: 48px;
+  height: 48px;
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.header-subtitle {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* Main Content */
+.options-main {
+  padding: 0 24px;
+}
+
+/* Section */
+.options-section {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 16px 20px;
+  background-color: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  color: #334155;
+}
+
+.section-title svg {
+  color: #0ea5e9;
+}
+
+.section-content {
+  padding: 20px;
+}
+
+/* Form */
+.settings-form {
+  max-width: 500px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #334155;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+}
+
+.form-input::placeholder {
+  color: #94a3b8;
+}
+
+.form-hint {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 6px;
+}
+
+.form-hint strong {
+  color: #0ea5e9;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn:focus {
+  outline: 2px solid #0ea5e9;
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  background-color: #0ea5e9;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0284c7;
+}
+
+.btn-secondary {
+  background-color: #e2e8f0;
+  color: #475569;
+}
+
+.btn-secondary:hover {
+  background-color: #cbd5e1;
+}
+
+.btn-danger {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.btn-danger:hover {
+  background-color: #fecaca;
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Status Message */
+.status-message {
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.status-message.success {
+  background-color: #dcfce7;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.status-message.error {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+.status-message.info {
+  background-color: #e0f2fe;
+  color: #075985;
+  border: 1px solid #bae6fd;
+}
+
+/* Transfers List */
+.transfers-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.transfer-count {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.transfers-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.transfer-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background-color: #f8fafc;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.transfer-item:last-child {
+  margin-bottom: 0;
+}
+
+.transfer-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #dcfce7;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #16a34a;
+  flex-shrink: 0;
+}
+
+.transfer-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.transfer-name {
+  font-weight: 500;
+  color: #1e293b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.transfer-meta {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.transfer-actions {
+  flex-shrink: 0;
+}
+
+.btn-icon {
+  padding: 6px;
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.btn-icon:hover {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.loading-placeholder,
+.empty-placeholder {
+  text-align: center;
+  color: #94a3b8;
+  padding: 32px;
+}
+
+/* Info Grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.info-label {
+  font-size: 12px;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-value {
+  font-size: 14px;
+  font-weight: 500;
+  color: #334155;
+}
+
+.info-links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.info-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #0ea5e9;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.info-link:hover {
+  text-decoration: underline;
+}
+
+/* Utility Classes */
+.hidden {
+  display: none !important;
+}
+
+/* Scrollbar */
+.transfers-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.transfers-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.transfers-list::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 3px;
+}
+
+.transfers-list::-webkit-scrollbar-thumb:hover {
+  background-color: #94a3b8;
+}
+
+/* Footer */
+.options-footer {
+  padding: 16px;
+  text-align: center;
+  font-size: 12px;
+  color: #94a3b8;
+  border-top: 1px solid #e2e8f0;
+  margin-top: 24px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .options-header {
+    padding: 24px 16px;
+  }
+
+  .options-main {
+    padding: 0 16px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .transfers-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}

@@ -1,0 +1,225 @@
+/* Gmail Rechnungs-Manager Content Script Styles */
+
+/* Upload Button - mit !important für Sichtbarkeit */
+.grm-upload-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  padding: 6px 12px !important;
+  margin-left: 8px !important;
+  margin-top: 4px !important;
+  background-color: #0ea5e9 !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 4px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  font-family: 'Google Sans', Roboto, sans-serif !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative !important;
+  z-index: 9999 !important;
+  min-width: 80px !important;
+  min-height: 28px !important;
+  box-sizing: border-box !important;
+}
+
+.grm-upload-btn:hover {
+  background-color: #0284c7;
+}
+
+.grm-upload-btn:focus {
+  outline: 2px solid #0ea5e9;
+  outline-offset: 2px;
+}
+
+.grm-upload-btn:active {
+  transform: scale(0.98);
+}
+
+.grm-upload-btn.grm-loading {
+  background-color: #64748b;
+  cursor: not-allowed;
+}
+
+.grm-upload-btn svg {
+  flex-shrink: 0;
+}
+
+/* Spinner Animation */
+.grm-spinner {
+  animation: grm-spin 1s linear infinite;
+}
+
+@keyframes grm-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Status Badge - mit !important für Sichtbarkeit */
+.grm-status-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  padding: 4px 10px !important;
+  margin-left: 8px !important;
+  margin-top: 4px !important;
+  background-color: #dcfce7 !important;
+  color: #16a34a !important;
+  border-radius: 4px !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  font-family: 'Google Sans', Roboto, sans-serif !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative !important;
+  z-index: 9999 !important;
+  min-height: 24px !important;
+  box-sizing: border-box !important;
+}
+
+.grm-status-badge svg {
+  flex-shrink: 0;
+}
+
+.grm-animate-in {
+  animation: grm-fade-in 0.3s ease;
+}
+
+@keyframes grm-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Notification */
+.grm-notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-size: 14px;
+  font-family: 'Google Sans', Roboto, sans-serif;
+  z-index: 9999;
+  animation: grm-slide-in 0.3s ease;
+}
+
+@keyframes grm-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.grm-notification-fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.grm-notification-success {
+  border-left: 4px solid #22c55e;
+}
+
+.grm-notification-error {
+  border-left: 4px solid #ef4444;
+}
+
+.grm-notification-close {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #64748b;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+.grm-notification-close:hover {
+  color: #334155;
+}
+
+/* Inbox Indicator - Grüner Haken in der E-Mail-Übersicht */
+.grm-inbox-indicator {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 18px !important;
+  height: 18px !important;
+  background-color: #22c55e !important;
+  border-radius: 50% !important;
+  margin-left: 4px !important;
+  margin-right: 4px !important;
+  vertical-align: middle !important;
+  flex-shrink: 0 !important;
+  position: relative !important;
+  z-index: 100 !important;
+}
+
+.grm-inbox-indicator svg {
+  width: 12px !important;
+  height: 12px !important;
+  stroke: white !important;
+  stroke-width: 3 !important;
+  fill: none !important;
+}
+
+/* Tooltip für Inbox-Indikator */
+.grm-inbox-indicator::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1f2937;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  z-index: 10000;
+}
+
+.grm-inbox-indicator:hover::after {
+  opacity: 1;
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .grm-notification {
+    background-color: #1e293b;
+    color: #e2e8f0;
+  }
+
+  .grm-notification-close {
+    color: #94a3b8;
+  }
+
+  .grm-notification-close:hover {
+    color: #e2e8f0;
+  }
+}

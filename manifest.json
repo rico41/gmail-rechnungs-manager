@@ -1,0 +1,60 @@
+{
+  "manifest_version": 3,
+  "name": "Gmail Rechnungs-Manager",
+  "version": "1.0.0",
+  "description": "Verwalte Rechnungs-PDFs in Gmail und sende sie direkt an deine Buchhaltung (boring.tax)",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess"
+  ],
+  "host_permissions": [
+    "https://mail.google.com/*",
+    "https://backend.boring.tax/*"
+  ],
+  "background": {
+    "service_worker": "service_worker.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["gmail_content.js"],
+      "css": ["gmail_content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "assets/icons/icon16.png",
+      "32": "assets/icons/icon32.png",
+      "48": "assets/icons/icon48.png",
+      "128": "assets/icons/icon128.png"
+    },
+    "default_title": "Gmail Rechnungs-Manager"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "32": "assets/icons/icon32.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "remove_origin",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  }
+}
